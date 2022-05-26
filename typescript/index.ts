@@ -28,15 +28,16 @@ const sidebar = document.querySelector(".navbar") as HTMLDivElement;
 let hamburger_menu_status = false;
 
 hamburger_menu.addEventListener("click",() => {
-    hamburger_menu_status = !hamburger_menu_status;
+
     if(hamburger_menu_status){
         sidebar.classList.remove("show-navbar");
         sidebar.classList.add("hide-navbar");
-
-
 
     }else{
         sidebar.classList.remove("hide-navbar");
         sidebar.classList.add("show-navbar");
     }
+
+    hamburger_menu_status = !hamburger_menu_status;
+
 })

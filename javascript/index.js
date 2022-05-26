@@ -21,7 +21,6 @@ const hamburger_menu = document.querySelector(".hamburger-menu");
 const sidebar = document.querySelector(".navbar");
 let hamburger_menu_status = false;
 hamburger_menu.addEventListener("click", () => {
-    hamburger_menu_status = !hamburger_menu_status;
     if (hamburger_menu_status) {
         sidebar.classList.remove("show-navbar");
         sidebar.classList.add("hide-navbar");
@@ -30,4 +29,5 @@ hamburger_menu.addEventListener("click", () => {
         sidebar.classList.remove("hide-navbar");
         sidebar.classList.add("show-navbar");
     }
+    hamburger_menu_status = !hamburger_menu_status;
 });
