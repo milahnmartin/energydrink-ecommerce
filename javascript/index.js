@@ -7,7 +7,7 @@ const e_drink_text = document.querySelector(".energy-span");
 const e_drink_name = ["E", "n", "e", "r", "g", "y", " ", "D", "r", "i", "n", "k"];
 let current = 0;
 const typeWriterHandler = () => {
-    if (current == e_drink_name.length) {
+    if (current === e_drink_name.length) {
         current = 0;
         e_drink_text.innerHTML = "";
     }
@@ -16,7 +16,7 @@ const typeWriterHandler = () => {
         current += 1;
     }
 };
-const typewriter = setInterval(typeWriterHandler, 500);
+setInterval(typeWriterHandler, 500);
 const hamburger_menu = document.querySelector(".hamburger-menu");
 const sidebar = document.querySelector(".navbar");
 let hamburger_menu_status = false;

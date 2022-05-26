@@ -15,8 +15,5 @@
   "bugs": {
     "url": "https://github.com/milahnmartin/milahnmartin-iteca-ecommerce/issues"
   },
-  "homepage": "https://github.com/milahnmartin/milahnmartin-iteca-ecommerce#readme",
-  "devDependencies": {
-    "typescript": "^4.7.2"
-  }
+  "homepage": "https://github.com/milahnmartin/milahnmartin-iteca-ecommerce#readme"
 }
