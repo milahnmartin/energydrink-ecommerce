@@ -1,0 +1,22 @@
+{
+  "name": "milahnmartin-iteca-ecommerce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/milahnmartin/milahnmartin-iteca-ecommerce.git"
+  },
+  "author": "Milahn Martin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/milahnmartin/milahnmartin-iteca-ecommerce/issues"
+  },
+  "homepage": "https://github.com/milahnmartin/milahnmartin-iteca-ecommerce#readme",
+  "devDependencies": {
+    "typescript": "^4.7.2"
+  }
+}
