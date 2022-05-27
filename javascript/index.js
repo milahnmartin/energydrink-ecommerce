@@ -17,17 +17,3 @@ const typeWriterHandler = () => {
     }
 };
 setInterval(typeWriterHandler, 500);
-const hamburger_menu = document.querySelector(".hamburger-menu");
-const sidebar = document.querySelector(".navbar");
-let hamburger_menu_status = false;
-hamburger_menu.addEventListener("click", () => {
-    if (hamburger_menu_status) {
-        sidebar.classList.remove("show-navbar");
-        sidebar.classList.add("hide-navbar");
-    }
-    else {
-        sidebar.classList.remove("hide-navbar");
-        sidebar.classList.add("show-navbar");
-    }
-    hamburger_menu_status = !hamburger_menu_status;
-});

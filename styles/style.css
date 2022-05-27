@@ -14,8 +14,11 @@
     background: -webkit-linear-gradient(225deg, hsla(12, 83%, 62%, 1) 0%, hsla(214, 35%, 37%, 1) 74%);
     display: grid;
     grid-template-rows: 100vh;
-    grid-template-rows: 50px auto;
     height: 100vh;
+}
+
+.grid-container{
+    grid-template-rows: 50px auto;
 }
 
 .navbar-container{
@@ -25,6 +28,8 @@
     padding: 15px;
     height: 100%;
     align-items: center;
+    z-index:500;
+
 }
 
 .navbar-container .hamburger-menu{
@@ -138,6 +143,123 @@
     visibility: visible;
     opacity: 1;
     transition: visibility 0s linear 0s, opacity 500ms;
+}
+
+.login-container{
+    align-self: center;
+    justify-self: center;
+    height: 400px;
+    width:400px;
+    border-radius: 10px;
+    background-color: #ee6c4d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -100px;
+}
+
+form{
+    display: flex;
+    flex-direction:column;
+    padding: 5px;
+    position: relative;
+
+}
+
+input{
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid white;
+    caret-color: white;
+    padding: 10px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+input::placeholder{
+    color: white;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+
+form button{
+    background-color: #515c7a;
+    padding: 8px;
+    border-radius: 5px;
+    border:none;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor:pointer;
+    margin: 10px;
+    width: 100px;
+    align-self: center;
+    position: relative;
+    top: 30px;
+
+}
+
+form button:hover{
+    background-color: #1c77c3;
+    transition: background-color .2s ease-in;
+}
+
+form input:focus{
+    outline: none;
+    color: #ffff;
+    text-align: center;
+}
+
+form a{
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+form a:hover{
+    color: #1c77c3;
+    transition: color .1s ease-in;
+
+}
+
+form span:hover{
+    cursor: pointer;
+}
+
+.user-icon{
+    height: 18px;
+    position: absolute;
+    top: 15px;
+    left: 5px;
+    color: #495b7d;
+}
+
+.password-icon{
+    height: 18px;
+    position: absolute;
+    top: 105px;
+    left: 5px;
+    color: #495b7d;
+}
+
+.welcome-container{
+    text-align: center;
+    height: fit-content;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+}
+
+.welcome-container h1{
+    color: white;
+    font-size: 40px;
+}
+
+.welcome-container h3{
+    color: #ee6c4d;
+    font-size: 60px;
 }
 
 @media only screen and (max-width: 790px) {
