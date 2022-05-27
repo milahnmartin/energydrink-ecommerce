@@ -148,7 +148,7 @@
 .login-container{
     align-self: center;
     justify-self: center;
-    height: 400px;
+    height: 500px;
     width:400px;
     border-radius: 10px;
     background-color: #ee6c4d;
@@ -229,6 +229,84 @@ form span:hover{
     cursor: pointer;
 }
 
+.about-us-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.about-msg-container{
+    grid-column: span 3;
+    align-self: center;
+    justify-self: center;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-msg-container h1:nth-child(1){
+    font-size: 3rem;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.about-msg-container h1:nth-child(2){
+    font-size: 6rem;
+    text-align: center;
+}
+.about-msg-container h1:nth-child(3){
+    font-size: 4rem;
+    text-align: center;
+    position: relative;
+    top: 10px;
+    color: #495b7d;
+    font-style: italic;
+}
+.why-about{
+    text-align: center;
+    grid-column: 1;
+    grid-row: 2;
+}
+.when-about{
+    text-align: center;
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.future-about{
+    text-align: center;
+    grid-column: 3;
+    grid-row: 2;
+
+}
+
+.when-about, .why-about, .future-about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    padding: 0 20px 0 20px;
+}
+
+.when-about h1, .why-about h1, .future-about h1{
+    color: white ;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 20px;
+}
+.when-about p, .why-about p, .future-about p{
+    max-width: 400px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: lighter;
+    white-space:normal;
+    line-height:30px;
+}
+
+
 .user-icon{
     height: 18px;
     position: absolute;
@@ -237,10 +315,34 @@ form span:hover{
     color: #495b7d;
 }
 
+
+.user-icon-register.ed-name{
+    height: 18px;
+    position: absolute;
+    top: 190px;
+    left: 5px;
+    color: #495b7d;
+}
+
+.user-icon-register.ed-surname{
+    height: 18px;
+    position: absolute;
+    top: 110px;
+    left: 5px;
+    color: #495b7d;
+}
+
 .password-icon{
     height: 18px;
     position: absolute;
     top: 105px;
+    left: 5px;
+    color: #495b7d;
+}
+.password-icon-register{
+    height: 18px;
+    position: absolute;
+    top: 280px;
     left: 5px;
     color: #495b7d;
 }
@@ -262,6 +364,8 @@ form span:hover{
     font-size: 60px;
 }
 
+
+
 @media only screen and (max-width: 790px) {
     .main-container .energy-span{
         font-weight: initial;
@@ -274,4 +378,37 @@ form span:hover{
     .navbar{
         width: 100%;
     }
+    .about-msg-container h1:nth-child(2){
+        font-size: 4rem;
+    }
+
+
+    .about-us-container{
+        display: grid;
+        grid-template-rows: auto auto auto auto;
+    }
+
+    .why-about{
+        text-align: center;
+        grid-column: 1/4;
+        grid-row: 2;
+    }
+    .when-about{
+        text-align: center;
+        grid-column: 1/4;
+        grid-row: 3;
+    }
+
+    .future-about{
+        text-align: center;
+        grid-column: 1/4;
+        grid-row: 4;
+
+    }
+
+    .grid-container{
+        height: 200vh;
+    }
+
+
 }
