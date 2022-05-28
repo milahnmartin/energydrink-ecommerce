@@ -383,32 +383,6 @@ form span:hover{
     }
 
 
-    .about-us-container{
-        display: grid;
-        grid-template-rows: auto auto auto auto;
-    }
-
-    .why-about{
-        text-align: center;
-        grid-column: 1/4;
-        grid-row: 2;
-    }
-    .when-about{
-        text-align: center;
-        grid-column: 1/4;
-        grid-row: 3;
-    }
-
-    .future-about{
-        text-align: center;
-        grid-column: 1/4;
-        grid-row: 4;
-
-    }
-
-    .grid-container{
-        height: 200vh;
-    }
 
 
 }
