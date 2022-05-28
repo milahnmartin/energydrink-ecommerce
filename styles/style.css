@@ -382,6 +382,9 @@ form span:hover{
         font-size: 4rem;
     }
 
+    .login-container{
+        max-width: 300px;
+    }
 
 
 
