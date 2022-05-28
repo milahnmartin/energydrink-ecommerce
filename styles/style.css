@@ -386,7 +386,15 @@ form span:hover{
         max-width: 300px;
         margin-top: 80px;
     }
+    .welcome-container{
+        margin-top: 20px;
+    }
 
-
+    .welcome-container h1{
+        font-size: 2rem;
+    }
+    .welcome-container h3{
+        font-size: 3rem;
+    }
 
 }
