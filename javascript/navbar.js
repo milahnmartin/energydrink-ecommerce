@@ -23,7 +23,7 @@ const handleNav = (page=null) => {
         window.location.assign("/");
         return;
     }
-    window.location.assign(`/${page}.html`);
+    window.location.assign(`/${page}.php`);
 }
 
 SideBarMain.addEventListener("click",()=>{

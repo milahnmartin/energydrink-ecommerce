@@ -36,12 +36,12 @@ if(isset($_POST["submit"])){
 
 
     if(checkLoginUser()){
-        echo "SUCCESS";
         $conn->close();
+        header("Location: ../products.php?signedin=true");
         exit();
     }
 
-    echo "YOU DONT EXIST";
+    header("Location: ../products.php?signedin=false");
     $conn->close();
 }
 
