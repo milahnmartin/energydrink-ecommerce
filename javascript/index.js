@@ -4,15 +4,15 @@ login_btn.addEventListener("click", () => {
     window.location.assign("/login");
 });
 const e_drink_text = document.querySelector(".energy-span");
-const e_drink_name = ["E", "n", "e", "r", "g", "y", " ", "D", "r", "i", "n", "k"];
+const e_drink_string = "Energy Drink"
 let current = 0;
 const typeWriterHandler = () => {
-    if (current === e_drink_name.length) {
+    if (current === e_drink_string.length) {
         current = 0;
         e_drink_text.innerHTML = "";
     }
     else {
-        e_drink_text.innerHTML += e_drink_name[current];
+        e_drink_text.innerHTML += e_drink_string[current];
         current += 1;
     }
 };
