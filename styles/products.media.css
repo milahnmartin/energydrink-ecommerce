@@ -1,0 +1,42 @@
+
+.products-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 1fr 1fr;
+}
+
+.products-search-form{
+    position: relative;
+    width: 50%;
+    grid-column: span 4;
+    justify-self: center;
+}
+
+.products-search-form input::placeholder{
+    letter-spacing: 2px;
+}
+
+.products-search-form .product-search-icon{
+    height: 20px;
+    color: #ffffff;
+    cursor: pointer;
+    position: absolute;
+    top:15px;
+    right: 10px;
+
+}
+
+.products-search-form .product-search-icon:hover{
+    color: #98c1d9;
+    transform: scale(1.5);
+    transition: all .2s ease-in;
+}
+
+.products-search-form input[name="image"]{
+    display: none;
+}
+
+@media only screen and (max-width: 790px){
+
+}
+
