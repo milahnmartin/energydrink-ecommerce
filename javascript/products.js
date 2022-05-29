@@ -7,8 +7,13 @@ const statusBTN = document.querySelector(".login-btn");
 if(signInStatus === 'true'){
     statusBTN.innerHTML = "LOGOUT";
     statusBTN.addEventListener("click",()=>{
-        window.location.assign("/login.html")
+        window.location.assign("/login.php")
     })
 }else{
     statusBTN.innerHTML = "LOGIN";
 }
+console.log(url.search)
+const clearSearchParams = document.querySelector(".clear-search-params-icon");
+clearSearchParams.addEventListener("click",()=>{
+    // window.location.assign("/products.php");
+});
