@@ -85,7 +85,8 @@
     position: absolute;
     top:15px;
     right: 10px;
-
+    transition:.2s ease-in;
+    transition-property: transform,color;
 }
 
 .clear-search-params-icon{
@@ -100,7 +101,7 @@
 .products-search-form .product-search-icon:hover, .clear-search-params-icon:hover{
     color: #98c1d9;
     transform: scale(1.5);
-    transition: all .2s ease-in;
+
 }
 
 #pSubmit{

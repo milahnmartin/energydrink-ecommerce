@@ -3,16 +3,11 @@ const signInStatus = url.search.split("=")[1];
 console.log(signInStatus)
 
 const statusBTN = document.querySelector(".login-btn");
-
-if(signInStatus === 'true'){
-    statusBTN.innerHTML = "LOGOUT";
-    statusBTN.addEventListener("click",()=>{
-        window.location.assign("/login.php")
-    })
-}else{
-    statusBTN.innerHTML = "LOGIN";
-}
-console.log(url.search)
+statusBTN.addEventListener("click",()=>{
+    window.location.assign("/login.php")
+})
+const queryString = url.search.split("?")[1];
+console.log(queryString)
 const clearSearchParams = document.querySelector(".clear-search-params-icon");
 clearSearchParams.addEventListener("click",()=>{
     // window.location.assign("/products.php");

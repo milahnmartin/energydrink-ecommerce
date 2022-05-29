@@ -1,6 +1,7 @@
 <?php
 require '.env.php';
 if(isset($_POST["submit"])){
+    session_start();
     global $servername;
     global $username;
     global $database;
@@ -37,11 +38,16 @@ if(isset($_POST["submit"])){
 
     if(checkLoginUser()){
         $conn->close();
+        $_SESSION["username"] = $pUsername;
         header("Location: ../products.php?signedin=true");
+        exit();
+    }else{
+        $conn->close();
+        header("Location: ../login.php?signedin=false");
         exit();
     }
 
-    header("Location: ../products.php?signedin=false");
-    $conn->close();
+
+
 }
 
