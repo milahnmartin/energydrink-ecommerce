@@ -13,13 +13,10 @@
     background: -moz-linear-gradient(225deg, hsla(12, 83%, 62%, 1) 0%, hsla(214, 35%, 37%, 1) 74%);
     background: -webkit-linear-gradient(225deg, hsla(12, 83%, 62%, 1) 0%, hsla(214, 35%, 37%, 1) 74%);
     display: grid;
-    grid-template-rows: 100vh;
+    grid-template-rows: 50px auto;
     height: 100vh;
 }
 
-.grid-container{
-    grid-template-rows: 50px auto;
-}
 
 .navbar-container{
     display: grid;
