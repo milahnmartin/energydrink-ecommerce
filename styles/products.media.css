@@ -96,6 +96,8 @@
     position: absolute;
     top:15px;
     right: 40px;
+    transition:.2s ease-in;
+    transition-property: transform,color;
 }
 
 .products-search-form .product-search-icon:hover, .clear-search-params-icon:hover{
@@ -104,7 +106,7 @@
 
 }
 
-#pSubmit{
+#pSubmit, #clear-submit{
     display: none;
 }
 

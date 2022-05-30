@@ -16,7 +16,7 @@ if(isset($_POST["submit"])){
         die("Connection Failed");
     }
 
-    function checkLoginUser()
+    function checkLoginUser(): bool
     {
         $ExistResult = null;
         global $pUsername, $conn,$pPassword;
@@ -34,20 +34,12 @@ if(isset($_POST["submit"])){
         return false;
 
     }
-
-
     if(checkLoginUser()){
-        $conn->close();
         $_SESSION["username"] = $pUsername;
         header("Location: ../products.php?signedin=true");
-        exit();
     }else{
-        $conn->close();
         header("Location: ../login.php?signedin=false");
-        exit();
     }
-
-
-
+    $conn->close();
 }
 

@@ -14,7 +14,7 @@
         <div class="navbar-main"><h1>MAIN</h1></div>
         <div class="navbar-about"><h1>ABOUT</h1></div>
         <div class="navbar-products"><h1>PRODUCTS</h1></div>
-        <div class="navbar-register"><h1>REGISTER</h1></div>
+        <div class="navbar-register active"><h1>REGISTER</h1></div>
     </div>
 </div>
 <section class="grid-container">

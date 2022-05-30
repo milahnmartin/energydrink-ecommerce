@@ -1,3 +1,25 @@
+<?php
+
+require './php/.env.php';
+session_start();
+global $servername,$username,$database;
+$conn = new mysqli($servername, $username, null, $database);
+
+if($conn->connect_error){
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$drinkID = $_GET["id"];
+
+if(!isset($_GET["id"])){
+    header("Location: ../products.php");
+}
+
+$sql = "SELECT drinks.*,vendor.* from drinks INNER JOIN vendor ON drinks.vendor_info = vendor.Name WHERE drinks.id = ".$drinkID.";";
+$result = $conn->query($sql);
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +27,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ED Warehouse - Cart</title>
     <link rel="stylesheet" href="styles/style.css">
-    <script src="javascript/index.js" defer></script>
+    <link rel="stylesheet" href="styles/cart.media.css">
     <script src="javascript/navbar.js" defer></script>
+    <script src="javascript/cart.media.js" defer></script>
 </head>
 <body>
 <div class="navbar hide-navbar">
@@ -27,8 +50,36 @@
             </svg>
         </div>
     </div>
-    <div class="main-container">
-        <h1><span class="energy-span"></span></br><span class="warehouse-span">CART</span></h1>
+    <div class="drink-container">
+
+        <div class="left-drink-container">
+            <?php foreach ($result as $data){?>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 left-arrow-info" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
+                </svg>
+                <img src="/assets/<?php echo $data["drink_img"];?>" alt="<?php echo $data["name"];?>" loading="lazy">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 right-arrow-info" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd" />
+                </svg>
+            <?php } ?>
+            <button>BUY</button>
+        </div>
+
+        <div class="right-drink-info-container">
+            <?php  foreach ($result as $data) {?>
+                <div class="right-container-title">
+                    <h1><?php echo $data["name"];?></h1>
+                </div>
+                <h2 class="cart-energy">Energy</h2>
+                <h2 class="cart-sugar">Sugar</h2>
+                <h2 class="cart-vendor">Vendor</h2>
+                <h2 class="cart-price price">Price</h2>
+                <h2 class="cart-energy-total result"><?php echo $data["Energy"]; ?><span> KJ</span></h2>
+                <h2 class="cart-sugar-total result"><?php echo $data["Sugar"]; ?><span> g</span></h2>
+                <h2 class="cart-vendor-total result"><?php echo ucfirst($data["vendor_info"]); ?></h2>
+                <h2 class="cart-price-total result price"><span>R </span><?php echo $data["Price"]; ?></h2>
+            <?php } ?>
+        </div>
     </div>
 </section>
 </body>
