@@ -35,7 +35,7 @@ $conn->close();
 <div class="navbar hide-navbar">
     <div class="navbar-elements">
         <img src="./assets/logo.png" alt="e-logo" loading="lazy">
-        <div class="navbar-main active"><h1>MAIN</h1></div>
+        <div class="navbar-main"><h1>MAIN</h1></div>
         <div class="navbar-about"><h1>ABOUT</h1></div>
         <div class="navbar-products"><h1>PRODUCTS</h1></div>
         <div class="navbar-register"><h1>REGISTER</h1></div>
