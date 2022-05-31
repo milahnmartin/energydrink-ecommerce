@@ -79,7 +79,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 2fr 1fr 1fr 1fr 1fr 2fr;
     justify-items: center;
-    align-items: center;
+    align-items: end;
 }
 
 .right-drink-info-container .right-container-title{
@@ -105,9 +105,13 @@
 }
 
 .right-drink-info-container .price{
+    align-self: center;
     font-size: 2rem;
 }
 
+.right-drink-info-container .final-price {
+    color: #f54254;
+}
 .right-drink-info-container h2{
     color: white;
     font-family: 'Inter', sans-serif;
