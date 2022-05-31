@@ -7,10 +7,6 @@ statusBTN.addEventListener("click",()=>{
 })
 const queryString = url.search.split("?")[1];
 console.log(queryString)
-const clearSearchParams = document.querySelector(".clear-search-params-icon");
-clearSearchParams.addEventListener("click",()=>{
-    // window.location.assign("/products.php");
-});
 
 
 const productClickInfo = document.getElementsByClassName("product-info-btn");

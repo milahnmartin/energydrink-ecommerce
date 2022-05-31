@@ -93,6 +93,7 @@
     background-color: #98c1d9;
     flex-direction: column;
     justify-content: center;
+    z-index: 1;
 }
 
 .navbar .navbar-elements{

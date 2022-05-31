@@ -73,10 +73,12 @@ $conn->close();
                 <h2 class="cart-energy">Energy</h2>
                 <h2 class="cart-sugar">Sugar</h2>
                 <h2 class="cart-vendor">Vendor</h2>
+                <h2 class="cart-stock">Stock</h2>
                 <h2 class="cart-price price">Price</h2>
                 <h2 class="cart-energy-total result"><?php echo $data["Energy"]; ?><span> KJ</span></h2>
                 <h2 class="cart-sugar-total result"><?php echo $data["Sugar"]; ?><span> g</span></h2>
                 <h2 class="cart-vendor-total result"><?php echo ucfirst($data["vendor_info"]); ?></h2>
+                <h2 class="cart-stock-total result"><?php echo $data["Stock"]; ?> Left</h2>
                 <h2 class="cart-price-total result price"><span>R </span><?php echo $data["Price"]; ?></h2>
             <?php } ?>
         </div>
