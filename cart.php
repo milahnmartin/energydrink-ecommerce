@@ -2,8 +2,8 @@
 
 require './php/.env.php';
 session_start();
-global $servername,$username,$database;
-$conn = new mysqli($servername, $username, null, $database);
+global $servername,$username,$database,$password;
+$conn = new mysqli($servername, $username, $password, $database);
 
 if($conn->connect_error){
     die("Connection failed: " . $conn->connect_error);
