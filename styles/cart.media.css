@@ -166,6 +166,30 @@
     grid-row: 5/6;
 }
 
+.modal-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #495b7d;
+    width: 50%;
+    height: 50%;
+    border-radius: 5px;
+    z-index: 999;
+    visibility: hidden;
+    display: flex;
+}
+.modal-container form input[type=number]{
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+    background-color: #495b7d;
+    color: red;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
 @media only screen and(max-width: 790px){
     .drink-container{
         grid-template-columns: 100%;

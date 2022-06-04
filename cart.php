@@ -41,9 +41,25 @@ $conn->close();
         <div class="navbar-register"><h1>REGISTER</h1></div>
     </div>
 </div>
+<div class="modal-container">
+   <?php foreach ($result as $data){?>
+       <form method="post" action="./cart.php">
+           <input id="stock-selector-amount" type="number" max="<?php echo $data["Stock"];?>" min="1" value="1">
+           <input type="number" placeholder="4444333322221111" maxlength="16">
+       </form>
+    <?php }?>
+</div>
 <section class="grid-container">
     <div class="navbar-container">
-        <button class="login-btn">LOGIN</button>
+        <button class="login-btn">
+            <?php
+            if(isset($_SESSION["username"])){
+                echo "LOGOUT";
+            }else{
+                echo "LOGIN";
+            }
+            ?>
+        </button>
         <div class="hamburger-menu">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -61,8 +77,8 @@ $conn->close();
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 right-arrow-info" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd" />
                 </svg>
+                <button class="buy-btn" id="<?php echo $data["id"];?>">BUY</button>
             <?php } ?>
-            <button>BUY</button>
         </div>
 
         <div class="right-drink-info-container">

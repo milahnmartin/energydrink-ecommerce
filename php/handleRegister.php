@@ -4,6 +4,7 @@ if(isset($_POST["submit"])){
     global $servername;
     global $username;
     global $database;
+    global $password;
 
     $pUsername = $_POST["pUsername"];
     $pName = $_POST["pName"];
@@ -11,10 +12,16 @@ if(isset($_POST["submit"])){
     $pPassword = $_POST["pPassword"];
 
 
-    $conn = new mysqli($servername,$username,null,$database);
+    $conn = new mysqli($servername,$username,$password,$database);
 
     if($conn->connect_error){
         die("Connection Failed");
+    }
+
+    function encode($newPassword):string{
+        $salt = "salt";
+        $newPassword = $newPassword.$salt;
+        return hash("sha256",$newPassword);
     }
 
     function checkUserNameExist()
@@ -38,21 +45,22 @@ if(isset($_POST["submit"])){
         function handleRegister()
         {
             global $pUsername, $pSurname, $pPassword, $pName, $conn;
+            $encode = encode($pPassword);
             $stmt = $conn->stmt_init();
             $stmt->prepare("INSERT INTO account(Username,Name,Surname,Password)VALUES(?,?,?,?)");
-                $stmt->bind_param("ssss", $pUsername, $pName, $pSurname, $pPassword);
+                $stmt->bind_param("ssss", $pUsername, $pName, $pSurname, $encode);
                 $stmt->execute();
         }
 
 
     if(!checkUserNameExist()){
         handleRegister();
-        echo "SUCCESS";
         $conn->close();
+        header("Location: ../login.php?signedin=true");
         exit();
     }
 
-    echo "USER ALREADY EXISTS";
     $conn->close();
+    header("Location: ../login.php?signedin=false");
 }
 
