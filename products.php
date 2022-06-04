@@ -14,14 +14,26 @@
         $searchRequested = true;
     }
 
-    if(!$searchRequested) {
-        $sql = "SELECT * FROM drinks";
-    }else{
-        $sql = "SELECT * FROM drinks WHERE drinks.name LIKE '%".$_GET["pSearch"]."%'";
-    }
 
-    $result = $conn->query($sql);
-    $conn->close();
+function runSearchQuery()
+{
+    global $conn,$searchRequested;
+    if(!$searchRequested) {
+        $stmt = $conn->stmt_init();
+        $query = "SELECT * FROM drinks";
+        $stmt->prepare($query);
+    }else{
+        $pSearch = $_GET["pSearch"];
+        $stmt = $conn->stmt_init();
+        $query = "SELECT * FROM drinks WHERE drinks.name LIKE CONCAT('%',?,'%')";
+        $stmt->prepare($query);
+        $stmt->bind_param("s", $pSearch);
+
+    }
+    $stmt->execute();
+    return $stmt->get_result();
+}
+    $result = runSearchQuery();
 ?>
 
 <!DOCTYPE html>
