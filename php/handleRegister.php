@@ -40,7 +40,6 @@ if(isset($_POST["submit"])){
             }
 
             return false;
-
     }
         function handleRegister()
         {

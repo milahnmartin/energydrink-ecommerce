@@ -6,7 +6,6 @@ statusBTN.addEventListener("click",()=>{
     window.location.assign("/login.php")
 })
 const queryString = url.search.split("?")[1];
-console.log(queryString)
 
 
 const productClickInfo = document.getElementsByClassName("product-info-btn");

@@ -23,7 +23,11 @@ const buyBTB = document.querySelector(".buy-btn");
 const modalContainer = document.querySelector(".modal-container");
 const gridContainer = document.querySelector(".grid-container");
 
-buyBTB.addEventListener("click",()=> {
+buyBTB.addEventListener("click",(e)=> {
+    if(e.target.id === "$"){
+        window.location.assign("/login.php");
+        return;
+    }
     modalContainer.style.visibility = "visible";
     gridContainer.style.filter = "blur(5px)";
 });
