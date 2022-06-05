@@ -381,8 +381,27 @@ form span:hover{
     }
 
     .login-container{
-        max-width: 300px;
-        margin-top: 80px;
+        background-color: transparent;
+        position: relative;
+        top: 1px;
+        width: max-content;
+        height: auto;
+        overflow-y: scroll;
+    }
+
+    .login-container form .icon{
+        color: #ee6c4d;
+    }
+
+    .login-container button{
+        position: relative;
+        top: -40px;
+        background-color: #ee6c4d;
+    }
+
+    .login-container form button.login-btn{
+        position: relative;
+        top: 14px;
     }
     .welcome-container{
         margin-top: 20px;

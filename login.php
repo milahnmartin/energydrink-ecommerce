@@ -41,7 +41,7 @@
             </svg></span>
             <input type="password" id="pPassword" name="pPassword" placeholder="Password">
             <a href="#">FORGOT PASSWORD OR USERNAME</a>
-            <button id="submit" name="submit" type="submit" value="submit">SIGN IN</button>
+            <button id="submit" name="submit" type="submit" class="login-btn" value="submit">SIGN IN</button>
         </form>
     </div>
 </section>
