@@ -15,8 +15,12 @@ if(!isset($_GET["id"])){
     header("Location: ../products.php");
 }
 
-$sql = "SELECT drinks.*,vendor.* from drinks INNER JOIN vendor ON drinks.vendor_info = vendor.Name WHERE drinks.id = ".$drinkID.";";
-$result = $conn->query($sql);
+$sql = "SELECT drinks.*,vendor.* from drinks INNER JOIN vendor ON drinks.vendor_info = vendor.Name WHERE drinks.id = ?";
+$stmt = $conn->stmt_init();
+$stmt->prepare($sql);
+$stmt->bind_param("i", $drinkID);
+$stmt->execute();
+$result = $stmt->get_result();
 $conn->close();
 ?>
 
