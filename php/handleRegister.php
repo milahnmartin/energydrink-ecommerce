@@ -24,7 +24,7 @@ if(isset($_POST["submit"])){
         return hash("sha256",$newPassword);
     }
 
-    function checkUserNameExist()
+    function checkUserNameExist(): bool
     {
         $ExistResult = null;
         global $pUsername, $conn;
@@ -34,12 +34,7 @@ if(isset($_POST["submit"])){
             $stmt->execute();
             $stmt->bind_result($ExistResult);
             $stmt->fetch();
-
-            if ($ExistResult) {
-                return true;
-            }
-
-            return false;
+            return (bool)$ExistResult;
     }
         function handleRegister()
         {
