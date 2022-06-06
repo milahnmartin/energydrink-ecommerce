@@ -46,7 +46,7 @@ if(isset($_POST["submit"])){
         $_SESSION["username"] = $pUsername;
         header("Location: ../products.php?signedin=true");
     }else{
-        header("Location: ../login.php?signedin=false&username=".encode($pPassword));
+        header("Location: ../login.php?signedin=false");
     }
     $conn->close();
 }

@@ -28,22 +28,20 @@ buyBTB.addEventListener("click",(e)=> {
         window.location.assign("/login.php");
         return;
     }
-    modalContainer.style.visibility = "visible";
-    gridContainer.style.filter = "blur(5px)";
+    modalContainer.classList.add("show-modal");
 });
 
+const hamburgerMen = document.querySelector(".hamburger-menu");
 const body = document.querySelector("body");
-// body.addEventListener("dblclick",(e)=> {
-//     if(e.target.className !== "modal-container"){
-//         modalContainer.style.visibility = "hidden";
-//         gridContainer.style.filter = "blur(0)";
-//     }
-// });
+body.addEventListener("dblclick",(e)=> {
+    if(e.target.className !== "modal-container"){
+        modalContainer.classList.remove("show-modal");
+    }
+});
 
 body.addEventListener("keydown",(e)=> {
 if(e.key === "Escape"){
-    modalContainer.style.visibility = "hidden";
-    gridContainer.style.filter = "blur(0)";
+    modalContainer.classList.remove("show-modal");
 }
 });
 

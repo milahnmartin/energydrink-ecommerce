@@ -28,7 +28,6 @@ function runSearchQuery()
         $query = "SELECT * FROM drinks WHERE drinks.name LIKE CONCAT('%',?,'%')";
         $stmt->prepare($query);
         $stmt->bind_param("s", $pSearch);
-
     }
     $stmt->execute();
     return $stmt->get_result();

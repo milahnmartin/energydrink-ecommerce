@@ -1,17 +1,14 @@
 .products-container{
     display: grid;
     overflow-y: scroll;
-    scroll-snap-type: y mandatory;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 50px;
     grid-auto-rows: 500px;
     grid-gap:4rem;
     padding: 10px;
-
 }
 
 .cart-item{
-    scroll-snap-align: center;
     background-color: #ffffff90;
     padding: 15px;
     border-radius: 5px;
