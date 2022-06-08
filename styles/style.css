@@ -102,6 +102,7 @@
     position: relative;
     top: 70px;
 }
+
 .navbar .navbar-elements div{
     color: white;
     font-family: 'Inter', sans-serif;
@@ -382,11 +383,10 @@ form span:hover{
 
     .login-container{
         background-color: transparent;
-        position: relative;
-        top: 1px;
         width: max-content;
-        height: auto;
+        height: fit-content;
         overflow-y: scroll;
+        align-items: center;
     }
 
     .login-container form .icon{
@@ -408,10 +408,33 @@ form span:hover{
     }
 
     .welcome-container h1{
-        font-size: 2rem;
+        font-size: 1rem;
+        letter-spacing: 2px;
+        margin-bottom: 5px;
     }
     .welcome-container h3{
-        font-size: 3rem;
+        font-size: 2rem;
     }
+
+    .user-icon{
+        color: #ee6c4d;
+    }
+
+
+    .user-icon-register.ed-name{
+        color: #ee6c4d;
+    }
+
+    .user-icon-register.ed-surname{
+        color: #ee6c4d;
+    }
+
+    .password-icon{
+        color: #ee6c4d;
+    }
+    .password-icon-register{
+        color: #ee6c4d;
+    }
+
 
 }
