@@ -50,13 +50,14 @@ $conn->close();
        <form method="post" action="./cart.php">
            <input id="stock-selector-amount" type="number" max="<?php echo $data["Stock"];?>" min="1" value="1" required>
            <label for="stock-selector-amount">Amount</label>
-           <input type="number" id="card-input" placeholder="4444333322221111" maxlength="16" required>
+           <input type="number" id="card-input" placeholder="4444333322221111" minlength="16" maxlength="16" required>
            <label for="card-input">Card Info</label>
            <input type="email" id="email-purchase-info" placeholder="customer@energy.com" required>
            <label for="email-purchase-info">Email</label>
            <input type="text" id="coupon-code" maxlength="10">
-           <label for="coupon-code">Coupon Code</label>
-           <button type="submit" id="purchase-button">PURCHASE</button>
+           <label for="coupon-code" id="coupon-code-label">Coupon Code</label>
+           <h1>Total: <span data-price="<?php echo $data["Price"];?>" id="total-span">R <?php echo $data["Price"]; ?></span></h1>
+           <button type="submit"  id="purchase-button">PURCHASE</button>
        </form>
     <?php }?>
 </div>

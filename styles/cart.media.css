@@ -247,6 +247,51 @@ input[type=number]::-webkit-outer-spin-button {
     visibility: visible;
 }
 
+.modal-container h1{
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.modal-container h1, .modal-container span{
+    text-align: center;
+}
+
+.errorButton{
+    animation: handleErrorButton 3s linear;
+}
+
+.handleSuccesButton{
+    animation: handleSuccesButton 3s linear;
+}
+@keyframes handleSuccesButton {
+    0%{
+        color: white;
+        background-color: lime;
+        transform: scale(1.2);
+    }
+
+    100%{
+        background-color: #ee6c4d;
+        transform: scale(1);
+    }
+}
+
+@keyframes handleErrorButton {
+    0%{
+        background-color: red;
+        transform: scale(1.2);
+    }
+
+    100%{
+        background-color: #ee6c4d;
+        transform: scale(1);
+    }
+}
+
+
 @media only screen and (max-width: 790px){
     .drink-container{
         display: grid;
@@ -257,6 +302,7 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .left-drink-container{
         grid-template-rows: auto auto;
+        grid-template-columns: 1fr 1fr 1fr;
         grid-column: span -1;
         grid-row: span 1;
         width: 100%;
@@ -281,5 +327,13 @@ input[type=number]::-webkit-outer-spin-button {
         color: #98c1d9;
     }
 
+    .modal-container{
+        width: 90%;
+    }
+
+    .left-drink-container img{
+        height: 300px;
+        grid-column: 2/3;
+    }
 
 }

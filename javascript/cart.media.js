@@ -53,3 +53,98 @@ stockInput.addEventListener("change",(e)=> {
     }
 })
 
+const productAmountInput = document.getElementById("stock-selector-amount");
+const productTotalPriceSpan = document.getElementById("total-span");
+const productCouponCode = document.querySelector("#coupon-code");
+const couponCodeLabel = document.getElementById("coupon-code-label");
+
+const handleCouponCode = () => {
+    if(productCouponCode.value === "iteca"){
+        let currentPrice;
+        currentPrice = productTotalPriceSpan.innerHTML.split(" ")[1];
+        productTotalPriceSpan.innerHTML = 'R ' + String(Number(currentPrice-(0.10*currentPrice).toFixed(2)));
+        productCouponCode.disabled = true;
+        productCouponCode.style.color = 'limegreen';
+        productCouponCode.style.fontWeight = 'bold';
+        productCouponCode.style.textTransform = 'uppercase';
+        productCouponCode.style.borderBottom = '2px solid limegreen';
+        productCouponCode.style.cursor = 'no-drop';
+        couponCodeLabel.style.color = 'limegreen';
+    }
+}
+
+
+productAmountInput.addEventListener("change",(e)=> {
+    const stock = e.target.value;
+    const price = productTotalPriceSpan.dataset.price;
+    productTotalPriceSpan.innerHTML = `R ${(Number(stock)*Number(price)).toFixed(2)}`;
+    handleCouponCode();
+});
+
+
+productCouponCode.addEventListener("click",e => {
+        if(e.target.value === "iteca"){
+            const currentPrice = productTotalPriceSpan.innerHTML.split(" ")[1];
+            productTotalPriceSpan.innerHTML = 'R' + String(Number(currentPrice-(0.10*currentPrice).toFixed(2)));
+            productCouponCode.disabled = true;
+            productCouponCode.style.color = 'limegreen';
+            productCouponCode.style.fontWeight = 'bold';
+            productCouponCode.style.textTransform = 'uppercase';
+            productCouponCode.style.borderBottom = '2px solid limegreen';
+            productCouponCode.style.cursor = 'no-drop';
+            couponCodeLabel.style.color = 'limegreen';
+        }
+})
+
+
+const purchaseBTN = document.querySelector("#purchase-button");
+const productCardInput = document.querySelector("#card-input");
+const productEmailInput = document.querySelector("#email-purchase-info");
+
+
+const handleInputError = (errorReason) => {
+    purchaseBTN.innerHTML = errorReason;
+    purchaseBTN.classList.add("errorButton");
+    setTimeout(()=>{
+        purchaseBTN.innerHTML = "PURCHASE";
+        purchaseBTN.classList.remove("errorButton");
+    },2000);
+}
+
+const handleSuccessInput = () => {
+        purchaseBTN.classList.add("handleSuccesButton");
+        purchaseBTN.innerHTML = "SUCCESS";
+        setTimeout(()=>{
+            purchaseBTN.classList.remove("handleSuccesButton");
+            purchaseBTN.innerHTML = "PURCHASE";
+            modalContainer.classList.remove("show-modal");
+            window.location.assign("/purchase.php?status=success");
+        },3000);
+
+
+}
+
+purchaseBTN.addEventListener("click",(e)=> {
+    e.preventDefault();
+
+    const re = new RegExp("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$");
+
+    if(Number(productAmountInput.value) > productAmountInput.max){
+        handleInputError("Amount Error");
+        return;
+    }
+
+    if(productCardInput.value.length < 16 || productCardInput.value.length > 16){
+        handleInputError("Card Error");
+        return;
+    }
+
+    if(!(productEmailInput.value.length > 5) || (productEmailInput.value).search(re) === -1){
+        console.log(productEmailInput.value.length)
+        handleInputError("Email Error");
+        return;
+    }
+
+    handleSuccessInput();
+
+});
