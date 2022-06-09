@@ -46,12 +46,19 @@ $conn->close();
     </div>
 </div>
 <div class="modal-container">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 close-icon-modal" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+    </svg>
    <?php foreach ($result as $data){?>
        <form method="post" action="./cart.php">
            <input id="stock-selector-amount" type="number" max="<?php echo $data["Stock"];?>" min="1" value="1" required>
            <label for="stock-selector-amount">Amount</label>
            <input type="number" id="card-input" placeholder="4444333322221111" minlength="16" maxlength="16" required>
            <label for="card-input">Card Info</label>
+           <input type="number" id="card-cvv" placeholder="420" minlength="3" maxlength="3" required>
+           <label for="card-cvv">Card CVV</label>
+           <input type="number" id="card-expiry" placeholder="0422" required>
+           <label for="card-expiry">Card Expiration</label>
            <input type="email" id="email-purchase-info" placeholder="customer@energy.com" required>
            <label for="email-purchase-info">Email</label>
            <input type="text" id="coupon-code" maxlength="10">

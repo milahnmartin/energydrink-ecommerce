@@ -33,11 +33,11 @@ buyBTB.addEventListener("click",(e)=> {
 
 const hamburgerMen = document.querySelector(".hamburger-menu");
 const body = document.querySelector("body");
-body.addEventListener("dblclick",(e)=> {
-    if(e.target.className !== "modal-container"){
-        modalContainer.classList.remove("show-modal");
-    }
-});
+const closeModalIcon = document.querySelector(".close-icon-modal");
+
+closeModalIcon.addEventListener("click",()=> {
+    modalContainer.classList.remove("show-modal");
+})
 
 body.addEventListener("keydown",(e)=> {
 if(e.key === "Escape"){
@@ -89,7 +89,8 @@ productAmountInput.addEventListener("change",(e)=> {
 const purchaseBTN = document.querySelector("#purchase-button");
 const productCardInput = document.querySelector("#card-input");
 const productEmailInput = document.querySelector("#email-purchase-info");
-
+const productCardCVV = document.querySelector("#card-cvv");
+const productCardExpiry = document.querySelector("#card-expiry");
 
 const handleInputError = (errorReason) => {
     purchaseBTN.innerHTML = errorReason;
@@ -118,6 +119,7 @@ purchaseBTN.addEventListener("click",(e)=> {
 
     const re = new RegExp("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$");
     const reCreditCard = new RegExp("^[0-9]{16}$");
+    const reCVV = new RegExp("^[0-9]{3}$");
 
     if(Number(productAmountInput.value) > productAmountInput.max){
         handleInputError("Amount Error");
@@ -127,8 +129,13 @@ purchaseBTN.addEventListener("click",(e)=> {
         handleInputError("Card Error");
         return;
     }
+    if((productCardCVV.value).search(reCVV)){
+        handleInputError("CVV Error");
+        return;
+    }
+
     if(!(productEmailInput.value.length > 5) || (productEmailInput.value).search(re) === -1){
-        console.log(productEmailInput.value.length)
+        console.log(productEmailInput.value.length);
         handleInputError("Email Error");
         return;
     }

@@ -173,7 +173,7 @@
     transform: translate(-50%,-50%);
     background-color: #495b7d;
     width: 50%;
-    height: 50%;
+    height: 60%;
     border-radius: 5px;
     z-index: 1;
     visibility: hidden;
@@ -182,14 +182,30 @@
     align-items: start;
 }
 
+.close-icon-modal{
+    height: 30px;
+    color: #ee6c4d;
+    position: absolute;
+    z-index: 3;
+    right: 4px;
+    top: 2px;
+    cursor: pointer;
+    transition: color .3s ease-in-out;
+}
+
+.close-icon-modal:hover{
+    color: #98c1d9;
+
+}
+
 #coupon-code{
     position: relative;
 }
 
 .apply-coupon-icon{
     position: absolute;
-    height: 30px;
-    top: 215px;
+    height: 35px;
+    top: 350px;
     right: 30px;
     color: #ee6c4d;
     cursor: pointer;
@@ -286,6 +302,8 @@ input[type=number]::-webkit-outer-spin-button {
 .handleSuccesButton{
     animation: handleSuccesButton 3s linear;
 }
+
+
 @keyframes handleSuccesButton {
     0%{
         color: white;
