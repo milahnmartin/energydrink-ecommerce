@@ -182,6 +182,26 @@
     align-items: start;
 }
 
+#coupon-code{
+    position: relative;
+}
+
+.apply-coupon-icon{
+    position: absolute;
+    height: 30px;
+    top: 215px;
+    right: 30px;
+    color: #ee6c4d;
+    cursor: pointer;
+    transition:color .5s ease-in-out;
+}
+
+.apply-coupon-icon:hover{
+    color: limegreen;
+}
+
+
+
 .modal-container form{
     width: 100%;
     height: 100%;

@@ -57,12 +57,14 @@ const productAmountInput = document.getElementById("stock-selector-amount");
 const productTotalPriceSpan = document.getElementById("total-span");
 const productCouponCode = document.querySelector("#coupon-code");
 const couponCodeLabel = document.getElementById("coupon-code-label");
+const applyCouponIcon = document.querySelector(".apply-coupon-icon");
 
-const handleCouponCode = () => {
+
+applyCouponIcon.addEventListener("click",(e)=> {
     if(productCouponCode.value === "iteca"){
         let currentPrice;
         currentPrice = productTotalPriceSpan.innerHTML.split(" ")[1];
-        productTotalPriceSpan.innerHTML = 'R ' + String(Number(currentPrice-(0.10*currentPrice).toFixed(2)));
+        productTotalPriceSpan.innerHTML = 'R ' + Math.round((parseInt(currentPrice)-(0.10*currentPrice))*100 / 100).toFixed(2);
         productCouponCode.disabled = true;
         productCouponCode.style.color = 'limegreen';
         productCouponCode.style.fontWeight = 'bold';
@@ -70,31 +72,18 @@ const handleCouponCode = () => {
         productCouponCode.style.borderBottom = '2px solid limegreen';
         productCouponCode.style.cursor = 'no-drop';
         couponCodeLabel.style.color = 'limegreen';
+        applyCouponIcon.style.color = 'limegreen';
+        applyCouponIcon.style.cursor = 'no-drop';
+        applyCouponIcon.removeEventListener("click",(e)=> {});
     }
-}
+});
 
 
 productAmountInput.addEventListener("change",(e)=> {
     const stock = e.target.value;
     const price = productTotalPriceSpan.dataset.price;
-    productTotalPriceSpan.innerHTML = `R ${(Number(stock)*Number(price)).toFixed(2)}`;
-    handleCouponCode();
+    productTotalPriceSpan.innerHTML = 'R ' + Math.round((parseInt(stock)*(price))*100 / 100).toFixed(2);
 });
-
-
-productCouponCode.addEventListener("click",e => {
-        if(e.target.value === "iteca"){
-            const currentPrice = productTotalPriceSpan.innerHTML.split(" ")[1];
-            productTotalPriceSpan.innerHTML = 'R' + String(Number(currentPrice-(0.10*currentPrice).toFixed(2)));
-            productCouponCode.disabled = true;
-            productCouponCode.style.color = 'limegreen';
-            productCouponCode.style.fontWeight = 'bold';
-            productCouponCode.style.textTransform = 'uppercase';
-            productCouponCode.style.borderBottom = '2px solid limegreen';
-            productCouponCode.style.cursor = 'no-drop';
-            couponCodeLabel.style.color = 'limegreen';
-        }
-})
 
 
 const purchaseBTN = document.querySelector("#purchase-button");
@@ -128,17 +117,16 @@ purchaseBTN.addEventListener("click",(e)=> {
     e.preventDefault();
 
     const re = new RegExp("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$");
+    const reCreditCard = new RegExp("^[0-9]{16}$");
 
     if(Number(productAmountInput.value) > productAmountInput.max){
         handleInputError("Amount Error");
         return;
     }
-
-    if(productCardInput.value.length < 16 || productCardInput.value.length > 16){
+    if((productCardInput.value).search(reCreditCard)){
         handleInputError("Card Error");
         return;
     }
-
     if(!(productEmailInput.value.length > 5) || (productEmailInput.value).search(re) === -1){
         console.log(productEmailInput.value.length)
         handleInputError("Email Error");

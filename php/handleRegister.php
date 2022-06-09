@@ -50,11 +50,11 @@ if(isset($_POST["submit"])){
     if(!checkUserNameExist()){
         handleRegister();
         $conn->close();
-        header("Location: ../login.php?signedin=true");
+        header("Location: ../login.php?register=true");
         exit();
     }
 
     $conn->close();
-    header("Location: ../login.php?signedin=false");
+    header("Location: ../register.php?register=false");
 }
 

@@ -56,6 +56,9 @@ $conn->close();
            <label for="email-purchase-info">Email</label>
            <input type="text" id="coupon-code" maxlength="10">
            <label for="coupon-code" id="coupon-code-label">Coupon Code</label>
+           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 apply-coupon-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+               <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+           </svg>
            <h1>Total: <span data-price="<?php echo $data["Price"];?>" id="total-span">R <?php echo $data["Price"]; ?></span></h1>
            <button type="submit"  id="purchase-button">PURCHASE</button>
        </form>

@@ -8,6 +8,10 @@
     padding: 10px;
 }
 
+.products-container::-webkit-scrollbar {
+    display: none;
+}
+
 .cart-item{
     background-color: #ffffff90;
     padding: 15px;
