@@ -15,3 +15,10 @@ for(let i of productClickInfo){
            window.location.assign(`/cart.php?id=${i.id}`);
    });
 }
+
+const deleteProductBTN = document.getElementsByClassName("delete-product-btn");
+for(let i of deleteProductBTN){
+    i.addEventListener("click",()=> {
+        window.location.assign(`/php/handleDeleteAdmin.php?id=${i.id}`);
+    });
+}

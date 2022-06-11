@@ -59,8 +59,7 @@ const productCouponCode = document.querySelector("#coupon-code");
 const couponCodeLabel = document.getElementById("coupon-code-label");
 const applyCouponIcon = document.querySelector(".apply-coupon-icon");
 
-
-applyCouponIcon.addEventListener("click",(e)=> {
+const handleCouponActivation = (e) => {
     if(productCouponCode.value === "iteca"){
         let currentPrice;
         currentPrice = productTotalPriceSpan.innerHTML.split(" ")[1];
@@ -74,10 +73,11 @@ applyCouponIcon.addEventListener("click",(e)=> {
         couponCodeLabel.style.color = 'limegreen';
         applyCouponIcon.style.color = 'limegreen';
         applyCouponIcon.style.cursor = 'no-drop';
-        applyCouponIcon.removeEventListener("click",(e)=> {});
+        applyCouponIcon.removeEventListener("click",handleCouponActivation);
     }
-});
+}
 
+applyCouponIcon.addEventListener("click",handleCouponActivation);
 
 productAmountInput.addEventListener("change",(e)=> {
     const stock = e.target.value;

@@ -96,6 +96,8 @@ function runSearchQuery()
                     <h1><?php echo $data["name"];?></h1>
                     <h2><?php echo $data["Price"]?></h2>
                     <button class="product-info-btn" id="<?php echo $data["id"] ?>">INFO</button>
+                    <?php echo ($_SESSION["username"] == "admin") ? "<button class='delete-product-btn' id=". $data['id'] .">DELETE</button>" : ""?>
+
                 </div>
             </div>
         <?php }?>
