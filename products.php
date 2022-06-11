@@ -43,6 +43,7 @@ function runSearchQuery()
     <title>ED Warehouse - Products</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/products.media.css">
+    <link rel="shortcut icon" href="./assets/eg.png" type="image/png">
     <script src="javascript/navbar.js" defer></script>
     <script src="javascript/products.js" defer></script>
 </head>

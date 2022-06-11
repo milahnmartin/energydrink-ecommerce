@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ED Warehouse - Main</title>
+    <title>ED Warehouse - Welcome</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="shortcut icon" href="./assets/eg.png" type="image/png">
     <script src="javascript/index.js" defer></script>
     <script src="javascript/navbar.js" defer></script>
 </head>

@@ -32,6 +32,7 @@ $conn->close();
     <title>ED Warehouse - Cart</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/cart.media.css">
+    <link rel="shortcut icon" href="./assets/eg.png" type="image/png">
     <script src="javascript/navbar.js" defer></script>
     <script src="javascript/cart.media.js" defer></script>
 </head>

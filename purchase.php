@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles/style.css">
     <script src="javascript/navbar.js" defer></script>
     <script src="javascript/purchase.js" defer></script>
+    <link rel="shortcut icon" href="./assets/eg.png" type="image/png">
 </head>
 <body>
 <div class="navbar hide-navbar">
