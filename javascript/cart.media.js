@@ -47,8 +47,9 @@ if(e.key === "Escape"){
 
 const stockInput = document.getElementById("stock-selector-amount");
 stockInput.addEventListener("change",(e)=> {
-    const stock = e.target.value;
-    if(stock > e.target.max){
+    if(Number(e.target.value) > Number(stockInput.max)){
+        console.log(`CURRENT VALUE: ${e.target.value}`);
+        console.log(`MAX VALUE: ${e.target.max}`);
         e.target.value = e.target.max;
     }
 })
