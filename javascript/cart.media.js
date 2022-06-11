@@ -21,8 +21,7 @@ leftArrow.addEventListener("click",()=> {
 
 const buyBTB = document.querySelector(".buy-btn");
 const modalContainer = document.querySelector(".modal-container");
-const gridContainer = document.querySelector(".grid-container");
-
+document.querySelector(".grid-container");
 buyBTB.addEventListener("click",(e)=> {
     if(e.target.id === "$"){
         window.location.assign("/login.php");

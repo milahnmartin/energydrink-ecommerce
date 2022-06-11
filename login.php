@@ -1,3 +1,11 @@
+<?php
+    if(!isset($_GET["signedin"])){
+        $signInStatus = null;
+    }
+    else{
+        $signInStatus = $_GET["signedin"];
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,6 +37,7 @@
     <div class="welcome-container">
         <h1>WELCOME BACK !</h1>
         <h3>LET'S SIGN YOU IN !</h3>
+        <?php echo ($signInStatus == 'false') ? "<script>alert('LOGIN INCORRECT')</script>" : null ?>
     </div>
     <div class="login-container">
         <form method="POST" action="php/handleLogin.php">
