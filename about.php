@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="styles/about.media.css">
     <script src="javascript/navbar.js" defer></script>
     <link rel="shortcut icon" href="./assets/eg.png" type="image/png">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9CG94C4ZT5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9CG94C4ZT5');
+</script>
 </head>
 <body>
 <div class="navbar hide-navbar">
